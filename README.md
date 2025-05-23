@@ -1,5 +1,6 @@
 # Forest Fire Weather Index (FWI) Prediction
 
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/viraj-gavade/End-To-End-Ml-Project)
 ![Forest Fire Prediction](https://img.shields.io/badge/ML-Forest%20Fire%20Prediction-brightgreen)
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Flask](https://img.shields.io/badge/Flask-2.0%2B-lightgrey)

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block title %}Forest Fire Prediction - Home{% endblock %}
+
+{% block content %}
+<div class="gradient-bg py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">
+                Forest Fire Weather Index Prediction
+            </h1>
+            <p class="max-w-xl mt-5 mx-auto text-xl text-white">
+                Predict the Forest Fire Weather Index (FWI) using state-of-the-art machine learning models
+            </p>            <div class="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
+                <a href="/predict" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-gray-100 shadow-lg">
+                    Start Prediction
+                </a>
+               
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="py-12 bg-white" id="about">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center">
+            <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">About</h2>
+            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                Understanding the FWI Prediction System
+            </p>
+            <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                Our model uses various environmental parameters to predict the Forest Fire Weather Index.
+            </p>
+        </div>
+
+        <div class="mt-10">
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-3">
+                        <svg class="h-6 w-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        <h3 class="ml-3 text-lg font-medium text-gray-900">Temperature & Humidity</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        The model analyzes temperature and relative humidity which are key factors in determining fire risk.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-3">
+                        <svg class="h-6 w-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
+                        <h3 class="ml-3 text-lg font-medium text-gray-900">Wind Speed & Rainfall</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        Wind speed accelerates fire spread while rainfall helps reduce the risk. Both are important predictors.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-3">
+                        <svg class="h-6 w-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        <h3 class="ml-3 text-lg font-medium text-gray-900">Advanced Metrics</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        FFMC, DMC, and ISI are specialized fire weather indices that our model uses to make accurate predictions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center">
+            <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">Model</h2>
+            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                Machine Learning Approach
+            </p>
+            <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                Our Ridge Regression model has been trained on the Algerian Forest Fires dataset for optimal prediction.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %}About the FWI Prediction Project{% endblock %}
+
+{% block content %}
+<div class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center mb-12">
+            <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">About the Project</h2>
+            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                Forest Fire Weather Index Prediction
+            </p>
+            <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                An end-to-end machine learning solution for predicting forest fire risk.
+            </p>
+        </div>
+
+        <div class="prose prose-lg prose-blue mx-auto">
+            <h2>Project Overview</h2>
+            <p>
+                This project aims to predict the Forest Fire Weather Index (FWI) using machine learning techniques. 
+                The FWI is a metric used by fire management agencies to estimate fire danger and potential fire behavior.
+            </p>
+            
+            <h2>The Dataset</h2>
+            <p>
+                We use the Algerian Forest Fires dataset, which contains meteorological data collected from two regions in Algeria: 
+                Bejaia region and Sidi-Bel Abbes region. The data spans the period from June 2012 to September 2012.
+            </p>
+            
+            <h2>Features Used</h2>
+            <ul>
+                <li><strong>Temperature</strong>: Day temperature in degrees Celsius</li>
+                <li><strong>RH</strong>: Relative humidity in percentage</li>
+                <li><strong>Ws</strong>: Wind speed in km/h</li>
+                <li><strong>Rain</strong>: Outside rain in mm</li>
+                <li><strong>FFMC</strong>: Fine Fuel Moisture Code index from the FWI system</li>
+                <li><strong>DMC</strong>: Duff Moisture Code index from the FWI system</li>
+                <li><strong>ISI</strong>: Initial Spread Index from the FWI system</li>
+                <li><strong>Classes</strong>: 0 for not fire, 1 for fire</li>
+                <li><strong>Region</strong>: 0 for Bejaia region, 1 for Sidi-Bel Abbes region</li>
+            </ul>
+            
+            <h2>Model Used</h2>
+            <p>
+                We use a Ridge Regression model, which is a linear regression technique that includes L2 regularization. 
+                Ridge regression helps prevent overfitting and provides more stable predictions.
+            </p>
+            
+            <h2>Technology Stack</h2>
+            <ul>
+                <li>Python for data processing and modeling</li>
+                <li>Scikit-learn for machine learning algorithms</li>
+                <li>Flask for web application development</li>
+                <li>Tailwind CSS for modern UI design</li>
+                <li>JavaScript for enhanced user interactions</li>
+            </ul>
+            
+            <h2>How It Works</h2>
+            <p>
+                Users input various meteorological parameters into the form. The application then processes 
+                this data, scales it appropriately using a pre-trained StandardScaler, and feeds it into the 
+                Ridge Regression model. The model computes the predicted FWI value, which is then displayed 
+                to the user along with an interpretation of the risk level.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

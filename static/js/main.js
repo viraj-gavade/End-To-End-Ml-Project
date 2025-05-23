@@ -35,13 +35,31 @@ document.addEventListener('DOMContentLoaded', function() {
             const submitButton = this.querySelector('button[type="submit"]');
             submitButton.innerHTML = 'Processing...';
             submitButton.disabled = true;
+            
+            // Store the current scroll position in localStorage to restore it after page reload
+            localStorage.setItem('scrollAfterSubmit', 'true');
         });
     }
     
-    // Add animation to the prediction result if it exists
+    // Scroll to prediction result if it exists and we just submitted the form
     const predictionResult = document.getElementById('prediction-result');
-    if (predictionResult) {
+    if (predictionResult && localStorage.getItem('scrollAfterSubmit') === 'true') {
+        // Clear the flag
+        localStorage.removeItem('scrollAfterSubmit');
+        
+        // Scroll to the prediction result with smooth animation
+        predictionResult.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // Add more noticeable animation
         predictionResult.classList.add('result-animation');
+        
+        // Highlight the result with a flash effect
+        setTimeout(() => {
+            predictionResult.classList.add('highlight-flash');
+            setTimeout(() => {
+                predictionResult.classList.remove('highlight-flash');
+            }, 1000);
+        }, 300);
     }
     
     // Add hover effects to feature cards
@@ -49,6 +67,27 @@ document.addEventListener('DOMContentLoaded', function() {
     featureCards.forEach(card => {
         card.classList.add('feature-card');
     });
+    
+    // Back to top button functionality
+    const backToTopButton = document.getElementById('back-to-top');
+    if (backToTopButton) {
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        // Scroll to top when clicked
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
 
 // Toggle mobile menu
